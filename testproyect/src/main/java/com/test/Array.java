@@ -146,7 +146,20 @@ public class Array {
 
         return vector;
     }
-
+    
+    /*********************************************************************
+    *
+    * Method name: insertionSort.
+    *
+    * Description of the Method: Values from the unsorted part are picked and placed at the correct position in the sorted part.
+    *
+    * Calling arguments: int[], vector, we call a one-dimensional array.
+    *
+    * Return value: int[] vector, an ordered vector.
+    *
+    *********************************************************************/
+    
+    
     public static int[] insertionSort(int[] vector){
         int val, position, n;
         n=vector.length;
@@ -165,6 +178,19 @@ public class Array {
         return vector;
     }
 
+    
+    /*********************************************************************
+    *
+    * Method name: selectionSort.
+    *
+    * Description of the Method: It is a comparison algorithm in which the vector is divided into two parts.
+    *
+    * Calling arguments: int[], vector, we call a one-dimensional array.
+    *
+    * Return value: int[] vector, an ordered vector.
+    *
+    *********************************************************************/
+    
     public static int[] selectionSort(int[] vector){
         int aux, idx_min;
         int n=vector.length;
@@ -182,6 +208,19 @@ public class Array {
         return vector;
     }
 
+    /*********************************************************************
+    *
+    * Method name: bubbleSort.
+    *
+    * Description of the Method: It is a method that repeatedly swapp the adjacent elements if they are in wrong order.
+    *
+    * Calling arguments: int[], vector, we call a one-dimensional array.
+    *
+    * Return value: int[] vector, an ordered vector.
+    *
+    *********************************************************************/
+    
+    
     public static int[] bubbleSort(int[] vector){
         int aux;
         int n=vector.length;
@@ -198,13 +237,37 @@ public class Array {
         return vector;
     }
 
+    /*********************************************************************
+    *
+    * Method name: toArrayList.
+    *
+    * Description of the Method: Convert one-dimensional array to a list.
+    *
+    * Calling arguments: int[], vector, we call a one-dimensional array.
+    *
+    * Return value: ArrayList list1, it's a list with the numbers of the array.
+    *
+    *********************************************************************
+    
     public static List<Integer> toArrayList(int[] vector){
         ArrayList<Integer> list1 = new ArrayList<Integer>();
         for(int i : vector) list1.add(i);  
 
         return list1;
     }
-
+    
+    /*********************************************************************
+    *
+    * Method name: toIntArray.
+    *
+    * Description of the Method: Convert a list to a one-dimensional array.
+    *
+    * Calling arguments: List<Integer> integers, we call a list.
+    *
+    * Return value: int[], ret, it's an array.
+    *
+    *********************************************************************/
+    
     public static int[] toIntArray(List<Integer> integers)
     {
         int[] ret = new int[integers.size()];
@@ -215,11 +278,33 @@ public class Array {
         return ret;
     }
 
+    /*********************************************************************
+    *
+    * Method name: copy.
+    *
+    * Description of the Method: Generate a copy of a one-dimensional array.
+    *
+    * Calling arguments: int[], vector, it's a one-dimensional array.
+    *
+    *********************************************************************/
+    
     public static void copy(int[] vector){
     	int [] vector2=Arrays.copyOf(vector, vector.length);
     }
 
-
+    /*********************************************************************
+    *
+    * Method name: equal.
+    *
+    * Description of the Method: Check if an array is equal to another.
+    *
+    * Calling arguments: int[], vector1, we call a one-dimensional array.
+    *                    int[], vector2, we call a one-dimensional array.
+    *
+    * Return value: boolean equal, if it's true the vectors are equal and if it's false they aren't equal.
+    *
+    *********************************************************************/
+    
     public static Boolean equal(int[] vector1, int[] vector2){
         boolean equal=true;
         if(vector1.length!=vector2.length) equal=false;
@@ -234,10 +319,22 @@ public class Array {
         return equal;
     }
 
+    /*********************************************************************
+    *
+    * Method name: display.
+    *
+    * Description of the Method: Print the array.
+    *
+    * Calling arguments: int[], vector, it's a one-dimensional array.
+    *
+    *********************************************************************/
+    
     public static void display(int[] vector1){
         for(int i=0;i<vector1.length;i++) System.out.print(vector1[i]+" ");
     }
 
+    
+    
     public static void generateFile(int N, int ls, String fileName){
     	try{
             BufferedWriter writer = new BufferedWriter(new FileWriter(new File(fileName),true));
