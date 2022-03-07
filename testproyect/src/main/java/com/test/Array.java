@@ -31,16 +31,52 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.*;
 
+/*********************************************************************
+*
+* Class Name: Array
+* Author/s name:
+* Release/Creation date:
+* Class description: In this class we have the entire program, what we do is take the size that the other 
+* class passes us and create three different arrays, one random, one in descending order and the other in ascending order.
+* We calculate the time it takes to do a series of processes and transfer the data in an excel.
+**********************************************************************
+*/
+
 public class Array {
     static Row row;
     static Map<Long, Object[]> data= new TreeMap<Long, Object[]>();
     static int excelrow=1;
+    
+    /*********************************************************************
+    * Method name: getWorkBook
+    *
+    * Description of the Method: This method introduces new values in the file WorkBook.xlsx .
+    *
+    * Return value: WorkbookFactory.create(inp), we create a new file input.
+    *
+    * Required Files: We use a file call WorkBook.xlsx
+    *
+    * Checked Exceptions, we use two exceptions:
+    * IOException: When there is an error in input or output.
+    * InvalidFormatException:  is used when the underlying problem appears to be that of bad 
+    * formatting of a value to deserialize.
+    *********************************************************************/
 
     public static Workbook getWorkBook() throws InvalidFormatException, IOException{
         InputStream inp = new FileInputStream("WorkBook.xlsx");
         return WorkbookFactory.create(inp);
     }
-    
+    /*********************************************************************
+    *
+    * Method name: keyboardArray
+    *
+    * Description of the Method: In this method we create a one-dimensional array with input of the keyboard.
+    *
+    * Calling arguments: Int size, we introduce the size of the array we want to create.
+    *
+    * Return value: int[] vector, we return the one-dimensional array that we created.
+    *
+    *********************************************************************/
     public static int[] keyboardArray(int size){
         int[] vector=new int[size];
         for(int i=0;i<vector.length;i++){
@@ -50,6 +86,22 @@ public class Array {
         return vector;
     }
 
+    /*********************************************************************
+    *
+    * Method name: fileArray
+    *
+    * Description of the Method: This method read a file and convert the values to an rray .
+    *
+    * Calling arguments: String fileName, its the file that we are going to read.
+    *
+    * Return value: toIntArray(integers), we convert the integers into an array.
+    *
+    * Required Files: We need the file the program is goint to read.
+    *
+    * IOException: When there is an error in input or output.
+    *
+    *********************************************************************/
+    
     public static int[] fileArray(String fileName){
         Path filePath = Paths.get(fileName);
         Scanner scanner;
@@ -70,6 +122,20 @@ public class Array {
 
         return toIntArray(integers);
     }
+    
+ 
+    /*********************************************************************
+    *
+    * Method name: randomArray
+    *
+    * Description of the Method: In this method we create an array with random numbers.
+    *
+    * Calling arguments: int size, it is the size of the array we are going to create
+    * int ls, it is the maximum value that a number can take in the array.
+    *
+    * Return value: int[], vector, we return a one-dimensional array.
+    *
+    *********************************************************************/
 
     public static int[] randomArray(int size, int ls){
         int[] vector=new int[size];
