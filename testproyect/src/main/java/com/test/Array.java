@@ -247,7 +247,7 @@ public class Array {
     *
     * Return value: ArrayList list1, it's a list with the numbers of the array.
     *
-    *********************************************************************
+    *********************************************************************/
     
     public static List<Integer> toArrayList(int[] vector){
         ArrayList<Integer> list1 = new ArrayList<Integer>();
