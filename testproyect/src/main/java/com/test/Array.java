@@ -332,7 +332,21 @@ public class Array {
     public static void display(int[] vector1){
         for(int i=0;i<vector1.length;i++) System.out.print(vector1[i]+" ");
     }
-
+    
+    /*********************************************************************
+    *
+    * Method name: generateFile
+    *
+    * Description of the Method: In this method we create a file with the values of the array
+    *
+    * Calling arguments: int, N, size of the array.
+    *                    int, ls, it is the maximum value that a number can take in the array.
+    *                    String, filename, the name of the file to be created.
+    *
+    * Checked Exceptions: 
+    * Exception: if the file cannot be written the exception is thrown.
+    *
+    *********************************************************************/
     
     
     public static void generateFile(int N, int ls, String fileName){
@@ -349,40 +363,87 @@ public class Array {
         }
     }
 
+    /*********************************************************************
+    *
+    * Method name: toDecreasingOrder.
+    *
+    * Description of the Method: Sorts an array in descending order, for that it is passed to a list it is sorted
+    * and passed back to an array.
+    *
+    * Calling arguments: int[], vector, it's a one-dimensional array.
+    *
+    * Return value: int[] Array.toIntArray.(list1), returns one-dimensional array sorted in decreasing order.
+    *
+    *********************************************************************/
+    
     public static int[] toDecreasingOrder(int[] vector){
         ArrayList<Integer> list1 =new ArrayList<Integer>(Array.toArrayList(vector));
         Collections.sort(list1, Collections.reverseOrder());
         return Array.toIntArray(list1);
     }
 
+   /*********************************************************************
+    *
+    * Method name: toAscendingOrder.
+    *
+    * Description of the Method: Sorts an array in ascending order
+    *
+    * Calling arguments: int[], vector, it's a one-dimensional array.
+    *
+    * Return value: int[], vector, returns one-dimensional array in ascending order.
+    *
+    *********************************************************************/ 
+    
     public static int[] toAscendingOrder(int[] vector){
         Arrays.sort(vector);
         return vector;
     }
     
+    /*********************************************************************
+    *
+    * Method name: checkTimeAscendingNano
+    *
+    * Description of the Method: Check the time in nano second for the ascending orden array.
+    *
+    * Calling arguments: int[], vector, it's a one-dimensional array.
+    *                    int, i, its the size of the one-dimensional array.
+    *
+    *********************************************************************/
+    
     public static void checkTimeAscendingNano(int[] vector, int i){
         long nano;
-        Array.toAscendingOrder(vector);
+        Array.toAscendingOrder(vector);            //Convert vector in ascending order.
         System.out.print(i+" |  "+"AO |");
-        nano=System.nanoTime();
-        Array.bubbleSort(vector);
+        nano=System.nanoTime();                    //We initialize the variable nanotime
+        Array.bubbleSort(vector);                  //BubbleSort Algorithm
         long bubbleTime=System.nanoTime()-nano;
         System.out.print(bubbleTime+"ns |");
 
         Array.toAscendingOrder(vector);
         nano=System.nanoTime();
-        Array.insertionSort(vector);
+        Array.insertionSort(vector);                //InsertionSort
         long insertionTime=System.nanoTime()-nano;
         System.out.print(insertionTime+"ns |");
 
         Array.toAscendingOrder(vector);
         nano=System.nanoTime();
-        Array.selectionSort(vector);
+        Array.selectionSort(vector);                //SelectionSort
         long selectionTime=System.nanoTime()-nano;
         System.out.println(selectionTime+"ns |");
         addRow(bubbleTime,insertionTime,selectionTime);
     }
 
+    /*********************************************************************
+    *
+    * Method name: checkTimeDescendingNano
+    *
+    * Description of the Method: Check the time in nano second for the descending orden array.
+    *
+    * Calling arguments: int[], vector, it's a one-dimensional array.
+    *                    int, i, its the size of the one-dimensional array.
+    *
+    *********************************************************************/
+    
     public static void checkTimeDescendingNano(int[] vector,int i){
         long nano;
         Array.toDecreasingOrder(vector);
@@ -405,6 +466,17 @@ public class Array {
         System.out.println(selectionTime+"ns |");
         addRow(bubbleTime,insertionTime,selectionTime);
     }
+    
+    /*********************************************************************
+    *
+    * Method name: checkTimeRandomgNano
+    *
+    * Description of the Method: Check the time in nano second for the random orden array.
+    *
+    * Calling arguments: int[], vector, it's a one-dimensional array.
+    *                    int, i, its the size of the one-dimensional array.
+    *
+    *********************************************************************/
 
     public static void checkTimeRandomNano(int[] vector,int i){
         long nano;
@@ -429,6 +501,17 @@ public class Array {
         addRow(bubbleTime,insertionTime,selectionTime);
     }
     
+    /*********************************************************************
+    *
+    * Method name: checkTimeAscendingMilis
+    *
+    * Description of the Method: Check the time in milliseconds for the ascending orden array.
+    *
+    * Calling arguments: int[], vector, it's a one-dimensional array.
+    *                    int, i, its the size of the one-dimensional array.
+    *
+    *********************************************************************/
+    
     public static void checkTimeAscendingMillis(int[] vector, int i){
         long millis;
         Array.toAscendingOrder(vector);
@@ -452,6 +535,17 @@ public class Array {
         addRow(bubbleTime,insertionTime,selectionTime);
     }
 
+    /*********************************************************************
+    *
+    * Method name: checkTimeDescendingMilis
+    *
+    * Description of the Method: Check the time in milliseconds for the descending orden array.
+    *
+    * Calling arguments: int[], vector, it's a one-dimensional array.
+    *                    int, i, its the size of the one-dimensional array.
+    *
+    *********************************************************************/
+    
     public static void checkTimeDescendingMillis(int[] vector,int i){
         long millis;
         Array.toDecreasingOrder(vector);
@@ -475,6 +569,17 @@ public class Array {
         addRow(bubbleTime,insertionTime,selectionTime);
     }
 
+    /*********************************************************************
+    *
+    * Method name: checkTimeRandomgMilis
+    *
+    * Description of the Method: Check the time in milliseconds for the random orden array.
+    *
+    * Calling arguments: int[], vector, it's a one-dimensional array.
+    *                    int, i, its the size of the one-dimensional array.
+    *
+    *********************************************************************/
+    
     public static void checkTimeRandomMillis(int[] vector,int i){
         long millis;
         Array.randomArray(vector.length,vector.length);
@@ -498,11 +603,39 @@ public class Array {
         addRow(bubbleTime,insertionTime,selectionTime);
     }
 
+    /*********************************************************************
+    *
+    * Method name: addRow.
+    *
+    * Description of the Method: add a new row to the file.
+    *
+    * Calling arguments: long, bubbleTime, we pass the value of the bubble time.
+    *                    long, directInsertionTime, we pass the value of the direct Insertion time.
+    *                    long directSelectionTime, we pass the value of the direct Selection time
+    *
+    *********************************************************************/
+    
     public static void addRow(long bubbleTime, long directInsertionTime, long directSelectionTime){
         data.put(Long.valueOf(excelrow),new Object[] { bubbleTime, directInsertionTime, directSelectionTime });
         excelrow++;
     }
 
+    /*********************************************************************
+    *
+    * Method name: checkFullTimeMillis.
+    *
+    * Description of the Method: take the time in milis of the three algorithm.
+    *
+    * Calling arguments: int[], vector, it's a one-dimensional array.
+    *                    int, i, wthe size of the one-dimensional array.
+    * 
+    * Checked Exceptions, we use two exceptions:
+    * IOException: When there is an error in input or output.
+    * InvalidFormatException:  is used when the underlying problem appears to be that of bad 
+    * formatting of a value to deserialize.
+    *                   
+    *********************************************************************/
+    
     public static void checkFullTimeMillis(int[] vector,int i) throws InvalidFormatException, IOException{
         Array.checkTimeAscendingMillis(vector,i);
         Array.checkTimeDescendingMillis(vector,i);
@@ -510,6 +643,22 @@ public class Array {
         generateFile();
     }
 
+    /*********************************************************************
+    *
+    * Method name: checkFullTimeNano.
+    *
+    * Description of the Method: take the time in nano of the three algorithm.
+    *
+    * Calling arguments: int[], vector, it's a one-dimensional array.
+    *                    int, i, wthe size of the one-dimensional array.
+    *     
+    * Checked Exceptions, we use two exceptions:
+    * IOException: When there is an error in input or output.
+    * InvalidFormatException:  is used when the underlying problem appears to be that of bad 
+    * formatting of a value to deserialize.
+    *               
+    *********************************************************************/
+    
     public static void checkFullTimeNano(int[] vector,int i) throws IOException, InvalidFormatException{
         Array.checkTimeAscendingNano(vector,i);
         Array.checkTimeDescendingNano(vector,i);
@@ -517,6 +666,19 @@ public class Array {
         generateFile();
     }
 
+    /*********************************************************************
+    *
+    * Method name: generateFile.
+    *
+    * Description of the Method: Generate the excel file.
+    * 
+    * Checked Exceptions, we use two exceptions:
+    * IOException: When there is an error in input or output.
+    * InvalidFormatException:  is used when the underlying problem appears to be that of bad 
+    * formatting of a value to deserialize.
+    *               
+    *********************************************************************/
+    
     public static void generateFile() throws IOException, InvalidFormatException{
         Workbook wb=getWorkBook();
         Sheet sheet=wb.getSheetAt(0);
@@ -540,6 +702,23 @@ public class Array {
         out.close();
     }
 
+    /*********************************************************************
+    *
+    * Method name: getTimeFileAndOutput.
+    *
+    * Description of the Method: Generate the excel file.
+    * 
+    * Calling arguments: int[], vector, it's a one-dimensional array.
+    *                    int, type, if the value is 1, it is calculated in nanoseconds, and if it is another, 
+    *                    it is calculated in milliseconds.
+    *
+    * Checked Exceptions, we use two exceptions:
+    * IOException: When there is an error in input or output.
+    * InvalidFormatException:  is used when the underlying problem appears to be that of bad 
+    * formatting of a value to deserialize.
+    *               
+    *********************************************************************/
+    
     public static void getTimeFileAndOutput(int[] vector, int type) throws IOException, InvalidFormatException{
 
         for(int i=0;i<vector.length;i++){
