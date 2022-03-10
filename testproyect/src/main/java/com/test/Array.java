@@ -403,7 +403,7 @@ public class Array {
     *
     * Method name: checkTimeAscendingNano
     *
-    * Description of the Method: Check the time in nano second for the ascending orden array.
+    * Description of the Method: Check the time in nano second for the ascending orden array. Print it and store it as a new row 
     *
     * Calling arguments: int[], vector, it's a one-dimensional array.
     *                    int, i, its the size of the one-dimensional array.
@@ -437,7 +437,7 @@ public class Array {
     *
     * Method name: checkTimeDescendingNano
     *
-    * Description of the Method: Check the time in nano second for the descending orden array.
+    * Description of the Method: Check the time in nano second for the descending order array. Print it and store it as a new row 
     *
     * Calling arguments: int[], vector, it's a one-dimensional array.
     *                    int, i, its the size of the one-dimensional array.
@@ -471,7 +471,7 @@ public class Array {
     *
     * Method name: checkTimeRandomgNano
     *
-    * Description of the Method: Check the time in nano second for the random orden array.
+    * Description of the Method: Check the time in nano second for the random orden array. Print it and store it as a new row 
     *
     * Calling arguments: int[], vector, it's a one-dimensional array.
     *                    int, i, its the size of the one-dimensional array.
@@ -505,7 +505,7 @@ public class Array {
     *
     * Method name: checkTimeAscendingMilis
     *
-    * Description of the Method: Check the time in milliseconds for the ascending orden array.
+    * Description of the Method: Check the time in milliseconds for the ascending order array. Print it and store it as a new row 
     *
     * Calling arguments: int[], vector, it's a one-dimensional array.
     *                    int, i, its the size of the one-dimensional array.
@@ -539,7 +539,7 @@ public class Array {
     *
     * Method name: checkTimeDescendingMilis
     *
-    * Description of the Method: Check the time in milliseconds for the descending orden array.
+    * Description of the Method: Check the time in milliseconds for the descending order array. Print it and store it as a new row 
     *
     * Calling arguments: int[], vector, it's a one-dimensional array.
     *                    int, i, its the size of the one-dimensional array.
@@ -573,7 +573,7 @@ public class Array {
     *
     * Method name: checkTimeRandomgMilis
     *
-    * Description of the Method: Check the time in milliseconds for the random orden array.
+    * Description of the Method: Check the time in milliseconds for the random order array. Print it and store it as a new row 
     *
     * Calling arguments: int[], vector, it's a one-dimensional array.
     *                    int, i, its the size of the one-dimensional array.
@@ -607,7 +607,7 @@ public class Array {
     *
     * Method name: addRow.
     *
-    * Description of the Method: add a new row to the file.
+    * Description of the Method: add a new row to the excel file by getting new times.
     *
     * Calling arguments: long, bubbleTime, we pass the value of the bubble time.
     *                    long, directInsertionTime, we pass the value of the direct Insertion time.
@@ -670,7 +670,9 @@ public class Array {
     *
     * Method name: generateFile.
     *
-    * Description of the Method: Generate the excel file.
+    * Description of the Method: Generate/update the excel file. By means of updating
+    * the correspoding table positions held in the file "WorkBook.xlsx" so that it allows
+    * for the data to be manageable.
     * 
     * Checked Exceptions, we use two exceptions:
     * IOException: When there is an error in input or output.
@@ -706,7 +708,7 @@ public class Array {
     *
     * Method name: getTimeFileAndOutput.
     *
-    * Description of the Method: Generate the excel file.
+    * Description of the Method: update the excel file and its output in console with new times.
     * 
     * Calling arguments: int[], vector, it's a one-dimensional array.
     *                    int, type, if the value is 1, it is calculated in nanoseconds, and if it is another, 
