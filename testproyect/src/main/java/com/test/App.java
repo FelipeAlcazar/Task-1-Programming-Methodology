@@ -1,6 +1,7 @@
 package com.test;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
@@ -16,6 +17,7 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 public class App 
 {
+ final static Scanner sc = new Scanner(System.in);
  /*********************************************************************
 *
 * Method name: main
