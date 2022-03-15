@@ -34,8 +34,6 @@ import org.apache.poi.xssf.usermodel.*;
 /*********************************************************************
 *
 * Class Name: Array
-* Author/s name:
-* Release/Creation date:
 * Class description: In this class we have the entire program, what we do is take the size that the other 
 * class passes us and create three different arrays, one random, one in descending order and the other in ascending order.
 * We calculate the time it takes to do a series of processes and transfer the data in an excel.
@@ -607,7 +605,7 @@ public class Array {
     *
     * Method name: addRow.
     *
-    * Description of the Method: add a new row to the excel file by getting new times.
+    * Description of the Method: update the row to the excel file by getting new times.
     *
     * Calling arguments: long, bubbleTime, we pass the value of the bubble time.
     *                    long, directInsertionTime, we pass the value of the direct Insertion time.
