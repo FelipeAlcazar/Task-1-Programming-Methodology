@@ -8,8 +8,7 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 /*********************************************************************
 *
 * Class Name: App
-* Author/s name:
-* Release/Creation date:
+* Author/s name: Felipe Alcázar and Elena Megía.
 * Class description: In this class we execute de program
 *
 **********************************************************************
